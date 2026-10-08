@@ -1,7 +1,5 @@
 # ZEEMBA Store (GitHub Pages)
 
-
-https://github.com/Samiran503/Zeembacrafts.xpress/blob/d4b58d9b6f3581d668b0fc51d644a81a4f92690d/IMG20260428122924.jpg
 ## 1. Pehli baar GitHub par daalna
 1. github.com par login karein, **New repository** dabayein. Naam: `zeemba-store`, **Public** chunein, Create.
 2. **Add file → Upload files** dabayein. `index.html`, `products.json` aur `images` folder drag karke daalein. **Commit changes**.
