@@ -66,15 +66,6 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);padd
 .ab{border:0;border-radius:10px;padding:10px 16px;font-weight:600;background:var(--btn);color:var(--onbtn)}.ab.g{background:#1fa855;color:#fff}.ab.o{background:var(--soft);color:var(--ink);border:1px solid var(--line)}
 .pimg{width:46px;height:46px;border-radius:8px;object-fit:cover;flex:none;display:flex;align-items:center;justify-content:center}
 .chk{display:inline-flex;gap:6px;align-items:center;margin:8px 14px 0 0;font-size:14px;color:var(--ink)!important}
-.cb{margin-top:8px}.ad2{width:100%;border:1.5px solid var(--btn);background:none;border-radius:10px;padding:9px;font-weight:500;font-size:14px}.ad2:active{background:var(--btn);color:var(--onbtn)}
-.st{display:flex;align-items:center;justify-content:space-between;border-radius:10px;background:var(--btn);color:var(--onbtn);padding:4px;font-size:14px}.st button{background:none;border:0;color:inherit;width:38px;height:34px;font-size:20px}.st.big{font-size:16px;margin-top:10px}.st.big button{height:44px}
-#bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:16;background:var(--btn);color:var(--onbtn);padding:14px 20px calc(14px + env(safe-area-inset-bottom,0px));justify-content:space-between;align-items:center;font-family:'Outfit';font-size:17px;cursor:pointer}
-.hc main{padding-bottom:96px}.hc .fab{bottom:calc(86px + env(safe-area-inset-bottom,0px))}
-#toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:#1f2937;color:#fff;padding:11px 14px;border-radius:12px;font-size:14px;z-index:60;opacity:0;pointer-events:none;transition:.25s;display:flex;gap:12px;align-items:center;max-width:92%}
-#toast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}#toast button{background:none;border:0;color:#d9f23a;font-weight:600;text-decoration:underline}
-.ci2{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.th{width:56px;height:56px;flex:none;border-radius:8px;overflow:hidden;background:var(--soft);display:flex;align-items:center;justify-content:center}.th img{width:100%;height:100%;object-fit:cover}
-.nf{flex:1;font-size:14px;line-height:1.35}.nf small{color:var(--mute)}.rm{background:none;border:0;color:var(--mute);font-size:16px;padding:6px}
-#drawer{overflow-y:auto}#items{flex:none;overflow:visible}.f.bad{border-color:#ef4444;background:#fef2f2}.sec{font-family:'Outfit';font-weight:500;font-size:17px;margin:18px 0 2px}#err{display:none;color:#b91c1c;font-size:13px;margin-top:10px;line-height:1.4}.hint{font-size:12px;color:var(--mute);margin:6px 0 0}
 </style></head><body>
 <header><div class="hr"><button class="ic" onclick="openM()" aria-label="Menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button><div id="logo" onclick="go('/')"></div><button class="ic" onclick="openCart()" aria-label="Cart"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="bdg" id="n">0</span></button></div>
 <div class="sb"><input id="q" placeholder="Search products..." oninput="srch()"></div></header>
@@ -82,30 +73,18 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);padd
 <footer><b class="hd" style="color:var(--ink);letter-spacing:3px">ZEEMBA</b><br>Handmade with love · WhatsApp +91 78961 60761</footer>
 <a class="fab" href="https://wa.me/917896160761" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
-<div id="bar" onclick="openCart()"><span id="barT"></span><b>View cart →</b></div><div id="toast"></div>
 <div class="ov" id="ov" onclick="closeAll()"></div>
 <aside class="panel" id="menu"><div id="menuL"></div></aside>
 <div class="panel" id="modal"></div>
-<aside class="panel" id="drawer"><div class="row" style="border:0"><h2 class="hd" style="margin:0">Your Cart <small id="cnt2" style="font-weight:400;color:var(--mute);font-size:15px"></small></h2><button class="ab o" onclick="closeAll()">✕</button></div>
-<div id="items"></div><button class="bn o" onclick="closeAll()" style="margin:8px 0">← Continue shopping</button><div class="row"><b>Total</b><b id="tot">₹0</b></div>
-<div class="sec">Delivery details</div><p class="hint">Saari details sahi bharein taaki hum aapka order bina deri ke bhej sakein. (* zaruri)</p>
-<input class="f" id="nm" placeholder="Full name *" autocomplete="name">
-<input class="f" id="ph" placeholder="Phone / WhatsApp number *" type="tel" inputmode="tel" autocomplete="tel" maxlength="14">
-<input class="f" id="em" placeholder="Email (optional)" type="email" autocomplete="email">
-<input class="f" id="ad" placeholder="House no., street, area *" autocomplete="street-address">
-<input class="f" id="lm" placeholder="Landmark (optional)">
-<input class="f" id="ct" placeholder="City / Town *" autocomplete="address-level2">
-<input class="f" id="st" placeholder="State *" autocomplete="address-level1">
-<input class="f" id="pn" placeholder="Pincode *" inputmode="numeric" maxlength="6" autocomplete="postal-code">
-<select class="f" id="pm"><option>Payment: UPI</option><option>Payment: Cash on Delivery</option><option>Payment: Abhi decide nahi kiya</option></select>
-<textarea class="f" id="nt" rows="3" placeholder="Special instructions: photo, naam ya customisation details (optional)"></textarea>
-<div id="err"></div>
-<a class="bn g" id="wa" href="#" target="_blank" rel="noopener" onclick="return ord(event)">Order all items on WhatsApp</a><button class="lk" id="clr" onclick="clr()" style="margin:10px auto 0;font-size:14px">Clear cart</button></aside>
+<aside class="panel" id="drawer"><div class="row" style="border:0"><h2 class="hd" style="margin:0">Your Cart</h2><button class="ab o" onclick="closeAll()">✕</button></div>
+<div id="items"></div><div class="row"><b>Total</b><b id="tot">₹0</b></div>
+<input class="f" id="nm" placeholder="Your name"><input class="f" id="ad" placeholder="Delivery address / city / pincode">
+<a class="bn g" id="wa" href="#" target="_blank" rel="noopener">Place order on WhatsApp</a></aside>
 
 
 <script>
 const WA="917896160761",$=i=>document.getElementById(i),esc=t=>String(t==null?"":t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-let D={sub:"",logo:"",cats:[],products:[]},route="/",cart=ld(),sortv="new",fl={r:"",sale:false},art=null,isAdm=false,dirty=false,editing=null,img="",cedit=null,cimg="";
+let D={sub:"",logo:"",cats:[],products:[]},route="/",cart={},sortv="new",fl={r:"",sale:false},art=null,isAdm=false,dirty=false,editing=null,img="",cedit=null,cimg="";
 const TL={sale:"SALE",new:"NEW!",custom:"CUSTOMISABLE"};
 function go(r){route=r;try{location.hash=r}catch(e){}render(true)}
 window.addEventListener("hashchange",()=>{const h=location.hash.slice(1)||"/";if(h!=route){route=h;render(true)}});
@@ -113,7 +92,7 @@ function logo(){$("logo").innerHTML=D.logo?`<img src="${D.logo}" alt="ZEEMBA">`:
 function srch(){const q=$("q").value;if(q&&!/^\/(c|all)/.test(route)){route="/all";try{location.hash=route}catch(e){}}render(false)}
 const PHI='<svg viewBox="0 0 24 24" width="34%" fill="none" stroke="#b4b9c1" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.7"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg>';
 function ph(x){return x.img?`<img src="${x.img}" alt="">`:PHI}
-function card(x){return `<a class="pc" onclick="go('/p/${x.id}')"><div class="pi" style="background:var(--soft)"><div class="tg">${(x.t||[]).map(k=>`<span class="t ${k}">${TL[k]}</span>`).join("")}</div><div class="im">${ph(x)}</div>${x.r?`<span class="rt">${x.r} <span style="color:#fbbf24">★</span> ( ${x.rc||0} reviews)</span>`:""}</div><h3>${esc(x.n)}</h3><div class="br">ZEEMBA</div><div class="pr"><b>₹${x.p}</b>${x.m>x.p?`<s>₹${x.m}</s>`:""}</div><div class="cb" data-cb="${x.id}" onclick="event.stopPropagation()">${ctl(x.id,0)}</div></a>`}
+function card(x){return `<a class="pc" onclick="go('/p/${x.id}')"><div class="pi" style="background:var(--soft)"><div class="tg">${(x.t||[]).map(k=>`<span class="t ${k}">${TL[k]}</span>`).join("")}</div><div class="im">${ph(x)}</div>${x.r?`<span class="rt">${x.r} <span style="color:#fbbf24">★</span> ( ${x.rc||0} reviews)</span>`:""}</div><h3>${esc(x.n)}</h3><div class="br">ZEEMBA</div><div class="pr"><b>₹${x.p}</b>${x.m>x.p?`<s>₹${x.m}</s>`:""}</div></a>`}
 function render(top){const r=route.split("/"),v=$("view");closeAll();
 if(r[1]=="c")list(decodeURIComponent(r[2]||""));else if(r[1]=="all")list("");else if(r[1]=="p")detail(+r[2]);else home();
 if(top)window.scrollTo(0,0)}
@@ -128,12 +107,18 @@ L.sort((a,b)=>sortv=="lo"?a.p-b.p:sortv=="hi"?b.p-a.p:b.id-a.id);
 $("view").innerHTML=`<h1 class="ttl">${esc(c||"All Products")}</h1><p class="sub" style="min-height:24px">${esc(cat?cat.d:"")}</p><div class="tb"><button class="fb" onclick="flt()"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h9M16 7h5M3 17h5M12 17h9"/><circle cx="14" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg> Filter</button><select class="sel" onchange="sortv=this.value;list('${esc(c).replace(/'/g,"\\'")}')"><option value="new" ${sortv=="new"?"selected":""}>Newest First</option><option value="lo" ${sortv=="lo"?"selected":""}>Price: Low to High</option><option value="hi" ${sortv=="hi"?"selected":""}>Price: High to Low</option></select></div><div class="pg">${L.map(card).join("")||'<p style="grid-column:1/-1;text-align:center;color:var(--mute);padding:40px 0">No products found.</p>'}</div>`}
 function flt(){$("modal").innerHTML=`<h2 class="hd" style="margin:0 0 8px">Filter</h2><b>Price</b>${[["","All prices"],["1","Under ₹300"],["2","₹300 – ₹600"],["3","Above ₹600"]].map(([v,t])=>`<label class="chk" style="display:flex"><input type="radio" name="pr" value="${v}" ${fl.r==v?"checked":""}> ${t}</label>`).join("")}<label class="chk" style="display:flex;margin-top:14px"><input type="checkbox" id="fsale" ${fl.sale?"checked":""}> Sale items only</label><button class="bn" onclick="fl.r=document.querySelector('input[name=pr]:checked').value;fl.sale=$('fsale').checked;render()">Apply</button><button class="bn o" onclick="fl={r:'',sale:false};render()">Clear</button>`;$("ov").classList.add("show");$("modal").classList.add("show")}
 function detail(i){const x=D.products.find(y=>y.id==i);if(!x){home();return}
-$("view").innerHTML=`<button class="lk" style="margin:20px 0 0" onclick="history.length>1?history.back():go('/')">← Back</button><div class="dt"><div class="pi" style="background:var(--soft)"><div class="tg">${(x.t||[]).map(k=>`<span class="t ${k}">${TL[k]}</span>`).join("")}</div><div class="im">${ph(x)}</div></div><div><h1 class="hd">${esc(x.n)}</h1><div class="br">ZEEMBA · ${esc(x.c)}</div>${x.r?`<p style="margin:8px 0 0">${x.r} <span style="color:#f59e0b">★</span> (${x.rc||0} reviews)</p>`:""}<div class="pr" style="margin:14px 0"><b>₹${x.p}</b>${x.m>x.p?`<s>₹${x.m}</s>`:""}</div><p style="color:var(--mute);line-height:1.6;white-space:pre-line">${esc(x.d)}</p><div class="cb" data-cb="${x.id}" data-big="1">${ctl(x.id,1)}</div><a class="bn o" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('Hi ZEEMBA, I want to order: '+x.n+' (₹'+x.p+')')}">Order only this item on WhatsApp</a></div></div>`}
+$("view").innerHTML=`<button class="lk" style="margin:20px 0 0" onclick="history.length>1?history.back():go('/')">← Back</button><div class="dt"><div class="pi" style="background:var(--soft)"><div class="tg">${(x.t||[]).map(k=>`<span class="t ${k}">${TL[k]}</span>`).join("")}</div><div class="im">${ph(x)}</div></div><div><h1 class="hd">${esc(x.n)}</h1><div class="br">ZEEMBA · ${esc(x.c)}</div>${x.r?`<p style="margin:8px 0 0">${x.r} <span style="color:#f59e0b">★</span> (${x.rc||0} reviews)</p>`:""}<div class="pr" style="margin:14px 0"><b>₹${x.p}</b>${x.m>x.p?`<s>₹${x.m}</s>`:""}</div><p style="color:var(--mute);line-height:1.6;white-space:pre-line">${esc(x.d)}</p><button class="bn" onclick="add(${x.id})">Add to cart</button><a class="bn g" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('Hi ZEEMBA, I want to order: '+x.n+' (₹'+x.p+')')}">Buy now on WhatsApp</a></div></div>`}
 function openM(){closeAll();$("menuL").innerHTML=`<div class="hd" style="font-size:14px;color:var(--mute);margin-bottom:8px">MENU</div><a onclick="go('/')">Home</a><a onclick="go('/all')">All Products</a>`+D.cats.map(c=>`<a onclick="go('/c/${encodeURIComponent(c.n)}')">${esc(c.n)}</a>`).join("")+`<a href="https://wa.me/${WA}" target="_blank" rel="noopener" style="display:block;color:inherit;text-decoration:none">Contact on WhatsApp</a>`;$("ov").classList.add("show");$("menu").classList.add("show")}
-function ld(){try{return JSON.parse(localStorage.getItem("zc")||"{}")}catch(e){return{}}}
-function sv(){try{localStorage.setItem("zc",JSON.stringify(cart))}catch(e){}}
-function ctl(id,big){const k=cart[id]||0;return k?`<div class="st${big?" big":""}"><button onclick="event.stopPropagation();chg(${id},-1)">−</button><span>${k} in cart</span><button onclick="event.stopPropagation();chg(${id},1)">+</button></div>`:`<button class="${big?"bn":"ad2"}" onclick="event.stopPropagation();add(${id})">+ Add to cart</button>`}
-function upd(id){document.querySelectorAll('[data-cb="'+id+'"]').forEach(e=>{e.innerHTML=ctl(id,e.dataset.big?1:0)})}
-let tt;function toast(m){const t=$("toast");t.innerHTML=esc(m)+' <button onclick="openCart()">View cart</button>';t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),2800)}
-function add(i){cart[i]=(cart[i]||0)+1;sv();draw();upd(i);const x=D.products.find(y=>y.id==i);toast((x?x.n:"Product")+" cart mein add ho gaya ✓")}
-function chg(i,d){cart[i]=(cart[i]||0)+d;if(cart[i]<1)delete car
+function add(i){cart[i]=(cart[i]||0)+1;draw();openCart()}
+function chg(i,d){cart[i]+=d;if(cart[i]<1)delete cart[i];draw()}
+function openCart(){closeAll();$("ov").classList.add("show");$("drawer").classList.add("show")}
+function closeAll(){["ov","modal","drawer","menu","adm"].forEach(i=>{const e=$(i);if(e)e.classList.remove("show")})}
+function draw(){let t=0,q=0,m="Hi ZEEMBA, I want to order:\n";
+const h=Object.keys(cart).map(i=>{const x=D.products.find(y=>y.id==i);if(!x){delete cart[i];return""}const k=cart[i];t+=x.p*k;q+=k;m+=`- ${x.n} x${k} = ₹${x.p*k}\n`;return `<div class="row"><span>${esc(x.n)}<br><small style="color:var(--mute)">₹${x.p}</small></span><span class="qty"><button onclick="chg(${i},-1)">−</button> ${k} <button onclick="chg(${i},1)">+</button></span></div>`}).join("");
+$("items").innerHTML=h||'<p style="color:var(--mute)">Your cart is empty.</p>';$("n").textContent=q;$("n").style.display=q?"block":"none";$("tot").textContent="₹"+t;
+m+=`Total: ₹${t}`;const nm=$("nm").value,ad=$("ad").value;if(nm)m+=`\nName: ${nm}`;if(ad)m+=`\nAddress: ${ad}`;
+$("wa").href=`https://wa.me/${WA}?text=${encodeURIComponent(m)}`;$("wa").style.display=q?"block":"none"}
+$("nm").oninput=$("ad").oninput=draw;
+
+fetch("products.json?v="+Date.now()).then(r=>r.json()).then(j=>{D=j;logo();route=location.hash.slice(1)||"/";render();draw()}).catch(()=>{$("view").innerHTML='<p style="text-align:center;padding:60px 16px">Products load nahi ho paaye. Page refresh karein.</p>'});
+</script></body></html>
