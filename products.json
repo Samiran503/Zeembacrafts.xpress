@@ -1,0 +1,115 @@
+{
+  "sub": "Handmade with love, sirf aapke liye ❤️",
+  "logo": "",
+  "cats": [
+    {
+      "n": "Miniature Frames",
+      "d": "Tiny handmade frames for photos, names and memories.",
+      "img": ""
+    },
+    {
+      "n": "Gift Hampers",
+      "d": "Ready-to-gift boxes with personalised keepsakes.",
+      "img": ""
+    },
+    {
+      "n": "Resin Art",
+      "d": "Resin coasters, keychains and flower preservation.",
+      "img": ""
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "n": "Mini Photo Frame",
+      "c": "Miniature Frames",
+      "p": 199,
+      "m": 299,
+      "d": "Tiny handmade frame with your favourite photo. Perfect for desks and shelves.",
+      "t": [
+        "sale",
+        "custom"
+      ],
+      "r": 5,
+      "rc": 1
+    },
+    {
+      "id": 2,
+      "n": "Personalised Name Frame",
+      "c": "Miniature Frames",
+      "p": 249,
+      "m": 349,
+      "d": "Miniature frame with a name of your choice in a custom design.",
+      "t": [
+        "new",
+        "custom"
+      ]
+    },
+    {
+      "id": 3,
+      "n": "Couple Miniature Frame",
+      "c": "Miniature Frames",
+      "p": 349,
+      "m": 499,
+      "d": "A romantic keepsake for anniversaries and weddings.",
+      "t": [
+        "sale"
+      ]
+    },
+    {
+      "id": 4,
+      "n": "Mini Gift Hamper",
+      "c": "Gift Hampers",
+      "p": 599,
+      "m": 799,
+      "d": "Miniature frame plus small keepsakes in a pretty box.",
+      "t": [
+        "new"
+      ]
+    },
+    {
+      "id": 5,
+      "n": "Birthday Gift Hamper",
+      "c": "Gift Hampers",
+      "p": 799,
+      "m": 999,
+      "d": "A complete birthday surprise with a personalised frame.",
+      "t": [
+        "custom"
+      ]
+    },
+    {
+      "id": 6,
+      "n": "Resin Coaster Set",
+      "c": "Resin Art",
+      "p": 449,
+      "m": 599,
+      "d": "Set of handmade resin coasters with dried flowers.",
+      "t": [
+        "sale"
+      ]
+    },
+    {
+      "id": 7,
+      "n": "Flower Keychain",
+      "c": "Resin Art",
+      "p": 149,
+      "m": 199,
+      "d": "Preserved flower resin keychain, light and durable.",
+      "t": [
+        "new"
+      ]
+    },
+    {
+      "id": 8,
+      "n": "Custom Resin Frame",
+      "c": "Resin Art",
+      "p": 699,
+      "m": 899,
+      "d": "Large resin frame made to order with your photo or flowers.",
+      "t": [
+        "custom"
+      ]
+    }
+  ]
+}
