@@ -26,12 +26,9 @@
       "p": 199,
       "m": 299,
       "d": "Tiny handmade frame with your favourite photo. Perfect for desks and shelves.",
-      "t": [
-        "sale",
-        "custom"
-      ],
+      "t": ["sale", "custom"],
       "r": 5,
-      "rc": 1
+      "rc": 1,
       "img": "mini-photo-frame.jpg"
     },
     {
@@ -41,10 +38,8 @@
       "p": 249,
       "m": 349,
       "d": "Miniature frame with a name of your choice in a custom design.",
-      "t": [
-        "new",
-        "custom"
-      ]
+      "t": ["new", "custom"],
+      "img": "personalised-name-frame.jpg"
     },
     {
       "id": 3,
@@ -53,9 +48,8 @@
       "p": 349,
       "m": 499,
       "d": "A romantic keepsake for anniversaries and weddings.",
-      "t": [
-        "sale"
-      ]
+      "t": ["sale"],
+      "img": "couple-miniature-frame.jpg"
     },
     {
       "id": 4,
@@ -64,9 +58,8 @@
       "p": 599,
       "m": 799,
       "d": "Miniature frame plus small keepsakes in a pretty box.",
-      "t": [
-        "new"
-      ]
+      "t": ["new"],
+      "img": "mini-gift-hamper.jpg"
     },
     {
       "id": 5,
@@ -75,9 +68,8 @@
       "p": 799,
       "m": 999,
       "d": "A complete birthday surprise with a personalised frame.",
-      "t": [
-        "custom"
-      ]
+      "t": ["custom"],
+      "img": "birthday-gift-hamper.jpg"
     },
     {
       "id": 6,
@@ -86,9 +78,8 @@
       "p": 449,
       "m": 599,
       "d": "Set of handmade resin coasters with dried flowers.",
-      "t": [
-        "sale"
-      ]
+      "t": ["sale"],
+      "img": "resin-coaster-set.jpg"
     },
     {
       "id": 7,
@@ -97,9 +88,8 @@
       "p": 149,
       "m": 199,
       "d": "Preserved flower resin keychain, light and durable.",
-      "t": [
-        "new"
-      ]
+      "t": ["new"],
+      "img": "flower-keychain.jpg"
     },
     {
       "id": 8,
@@ -108,9 +98,8 @@
       "p": 699,
       "m": 899,
       "d": "Large resin frame made to order with your photo or flowers.",
-      "t": [
-        "custom"
-      ]
+      "t": ["custom"],
+      "img": "custom-resin-frame.jpg"
     }
   ]
 }
