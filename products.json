@@ -11,6 +11,11 @@
       "n": "Gift Hampers",
       "d": "Ready-to-gift boxes with personalised keepsakes.",
       "img": "gift-hampers-cat.jpg"
+    },
+    {
+      "n": "Limited Editions",
+      "d": "Rare pieces, unlimited comedy! 😂 Only one available.",
+      "img": "limited-editions-cat.jpg"
     }
   ],
   "products": [
@@ -85,6 +90,18 @@
       "r": 4.8,
       "rc": 8,
       "img": "flower-keychain.jpg"
+    },
+    {
+      "id": 8,
+      "n": "Kushal kumar — Limited Edition 😂",
+      "c": "Limited Editions",
+      "p": 999,
+      "m": 9999,
+      "d": "One-piece exclusive collection! 😂 Rare specimen, unlimited drama, premium attitude and zero maintenance guarantee. One Piece Only — No Exchange, No Return, No Refund! 🤣",
+      "t": ["limited", "exclusive", "funny"],
+      "r": 5,
+      "rc": 1,
+      "img": "kushal.jpg"
     }
   ]
 }
