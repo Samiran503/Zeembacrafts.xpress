@@ -4,22 +4,31 @@
 <title>ZEEMBA – Handmade Miniature Frames</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff;--ink:#14161a;--mute:#6b7280;--line:#e5e7eb;--soft:#f5f5f6;--btn:#14161a;--onbtn:#fff;--ac:#c2410c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#fff;--ink:#14161a;--mute:#6b7280;--line:#e5e7eb;--soft:#f5f5f6;--btn:#14161a;--onbtn:#fff;--ac:#c2410c;--menu-bg:#F7F0E3;--menu-ink:#4A2E22;--menu-hover:#C9A86A;--menu-border:#E6D8C5;--menu-btn-bg:#6B4636;--menu-btn-text:#FFFFFF;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121212;--ink:#f1f1f1;--mute:#a0a4ab;--line:#2d2f33;--soft:#1e1f22;--btn:#f1f1f1;--onbtn:#121212;--ac:#fb923c}}
 :root[data-theme="dark"]{--bg:#121212;--ink:#f1f1f1;--mute:#a0a4ab;--line:#2d2f33;--soft:#1e1f22;--btn:#f1f1f1;--onbtn:#121212;--ac:#fb923c}
-*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',Arial,sans-serif}
 h1,h2,h3,.hd{font-family:'Outfit',Arial,sans-serif}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}
 .hid{display:none}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg)}
-.hr{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;max-width:1100px;margin:0 auto;padding:6px 14px}
-.ic{background:none;border:0;position:relative;width:44px;height:44px;display:flex;align-items:center;justify-content:center;padding:0}
-#logo{text-align:center;cursor:pointer}#logo img{height:50px;max-width:100%;object-fit:contain}
-.wm{font-family:'Outfit';font-weight:600;font-size:28px;letter-spacing:5px;color:#9a3412}
-.bdg{position:absolute;top:2px;right:0;background:#ef4444;color:#fff;font-size:11px;border-radius:10px;min-width:18px;height:18px;line-height:18px;text-align:center}
-.sb{max-width:1100px;margin:0 auto;padding:6px 16px 14px}
-.sb input{width:100%;border:0;background:var(--soft);border-radius:12px;padding:12px 14px 12px 44px;font-size:15px;outline:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' fill='none' stroke='%236b7280' stroke-width='2.4'%3E%3Ccircle cx='9' cy='9' r='7'/%3E%3Cpath d='M14 14l6 6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:14px center;background-size:20px}
-.sb{border-bottom:3px solid var(--line)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--menu-bg);border-bottom:1px solid var(--menu-border);box-shadow:0 2px 10px rgba(74,46,34,0.05)}
+.hr{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:10px 16px;gap:16px}
+#logo{cursor:pointer;display:flex;align-items:center;flex-shrink:0}#logo img{height:46px;max-width:100%;object-fit:contain}
+.wm{font-family:'Outfit';font-weight:600;font-size:26px;letter-spacing:4px;color:var(--menu-ink)}
+.desktop-nav{display:flex;align-items:center;gap:22px;margin:0 auto}
+@media(max-width:767px){.desktop-nav{display:none}}
+.nav-link{font-family:'Outfit',sans-serif;font-weight:500;font-size:15px;color:var(--menu-ink);text-decoration:none;padding:6px 2px;position:relative;transition:color 0.2s ease;cursor:pointer}
+.nav-link:hover,.nav-link.active{color:var(--menu-hover)}
+.nav-link.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background-color:var(--menu-hover);border-radius:2px}
+.hr-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.ic{background:none;border:0;position:relative;width:42px;height:42px;display:flex;align-items:center;justify-content:center;padding:0;color:var(--menu-ink);border-radius:8px;transition:background-color 0.2s,color 0.2s}
+.ic:hover{background-color:rgba(74,46,34,0.08);color:var(--menu-hover)}
+.mobile-menu-btn{display:flex}
+@media(min-width:768px){.mobile-menu-btn{display:none}}
+.bdg{position:absolute;top:2px;right:2px;background:var(--menu-btn-bg);color:var(--menu-btn-text);font-size:11px;font-weight:600;border-radius:10px;min-width:18px;height:18px;line-height:18px;text-align:center}
+.sb{max-width:1100px;margin:0 auto;padding:4px 16px 12px}
+.sb input{width:100%;border:1px solid var(--menu-border);background:#FFFDF9;color:var(--menu-ink);border-radius:12px;padding:10px 14px 10px 42px;font-size:14px;outline:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' fill='none' stroke='%234A2E22' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='9' cy='9' r='7'/%3E%3Cpath d='M14 14l6 6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:12px center;background-size:18px;transition:border-color 0.2s,box-shadow 0.2s}
+.sb input:focus{border-color:var(--menu-hover);box-shadow:0 0 0 3px rgba(201,168,106,0.2)}
 main{max-width:1100px;margin:0 auto;padding:0 16px 40px;min-height:60vh}
 .ttl{text-align:center;font-size:clamp(26px,7vw,40px);font-weight:500;margin:34px 0 10px;line-height:1.15}
 .sub{text-align:center;font-size:15px;margin:0 0 26px}
@@ -52,8 +61,17 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);padd
 .ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:40;display:none}.ov.show{display:block}
 .panel{position:fixed;z-index:50;background:var(--bg);color:var(--ink);display:none;flex-direction:column}.panel.show{display:flex}
 #drawer{top:0;right:0;bottom:0;width:min(420px,100%);padding:18px;padding-top:calc(18px + env(safe-area-inset-top,0px));padding-bottom:calc(18px + env(safe-area-inset-bottom,0px))}
-#menu{top:0;left:0;bottom:0;width:min(320px,86%);padding:22px;padding-top:calc(22px + env(safe-area-inset-top,0px));overflow:auto}
-#menu a{padding:14px 0;border-bottom:1px solid var(--line);font-family:'Outfit';font-size:17px;cursor:pointer}
+#menu{top:0;left:0;bottom:0;width:min(320px,86%);padding:20px;padding-top:calc(20px + env(safe-area-inset-top,0px));padding-bottom:calc(20px + env(safe-area-inset-bottom,0px));overflow-y:auto;background:var(--menu-bg);color:var(--menu-ink);border-right:1px solid var(--menu-border);box-shadow:4px 0 20px rgba(74,46,34,0.15);transform:translateX(-100%);visibility:hidden;pointer-events:none;transition:transform 0.3s cubic-bezier(0.16,1,0.3,1),visibility 0.3s;display:flex;flex-direction:column;z-index:50}
+#menu.show{transform:translateX(0);visibility:visible;pointer-events:auto;display:flex}
+.m-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--menu-border);margin-bottom:14px}
+.m-title{font-family:'Outfit',sans-serif;font-weight:600;font-size:20px;color:var(--menu-ink);letter-spacing:2px}
+.m-close{background:none;border:0;font-size:22px;color:var(--menu-ink);cursor:pointer;padding:4px 8px;border-radius:6px;line-height:1}
+.m-close:hover{background:rgba(74,46,34,0.08)}
+.m-link{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;margin-bottom:4px;border-radius:10px;font-family:'Outfit',sans-serif;font-size:16px;font-weight:500;color:var(--menu-ink);text-decoration:none;cursor:pointer;transition:background-color 0.2s,color 0.2s}
+.m-link:hover{background-color:rgba(201,168,106,0.15)}
+.m-link.active{background-color:var(--menu-hover);color:#FFFFFF;font-weight:600}
+.m-cat-title{font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;letter-spacing:1.5px;color:#8C6A58;margin:16px 0 6px 12px;text-transform:uppercase}
+.m-cat-link{padding-left:24px!important;font-size:15px!important}
 #modal{left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,94%);max-height:88vh;overflow:auto;border-radius:20px;padding:22px}
 .row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
 .qty button{border:1px solid var(--line);background:var(--soft);border-radius:6px;width:28px;height:28px}
@@ -67,7 +85,7 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);padd
 .pimg{width:46px;height:46px;border-radius:8px;object-fit:cover;flex:none;display:flex;align-items:center;justify-content:center}
 .chk{display:inline-flex;gap:6px;align-items:center;margin:8px 14px 0 0;font-size:14px;color:var(--ink)!important}
 </style></head><body>
-<header><div class="hr"><button class="ic" onclick="openM()" aria-label="Menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button><div id="logo" onclick="go('/')"></div><button class="ic" onclick="openCart()" aria-label="Cart"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="bdg" id="n">0</span></button></div>
+<header><div class="hr"><div id="logo" onclick="go('/')"></div><nav class="desktop-nav"><a class="nav-link" id="nl-home" onclick="go('/')">Home</a><a class="nav-link" id="nl-shop" onclick="go('/all')">Shop / Products</a><a class="nav-link" id="nl-cats" onclick="go('/#categories')">Categories</a><a class="nav-link" id="nl-about" onclick="go('/about')">About Us</a><a class="nav-link" href="https://wa.me/917896160761" target="_blank" rel="noopener">Contact Us</a></nav><div class="hr-actions"><button class="ic cart-ic" onclick="openCart()" aria-label="Cart"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="bdg" id="n">0</span></button><button class="ic mobile-menu-btn" onclick="openM()" aria-label="Menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button></div></div>
 <div class="sb"><input id="q" placeholder="Search products..." oninput="srch()"></div></header>
 <main id="view"></main>
 <footer><b class="hd" style="color:var(--ink);letter-spacing:3px">ZEEMBA</b><br>Handmade with love · WhatsApp +91 78961 60761</footer>
@@ -86,16 +104,25 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);padd
 const WA="917896160761",$=i=>document.getElementById(i),esc=t=>String(t==null?"":t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let D={sub:"",logo:"",cats:[],products:[]},route="/",cart={},sortv="new",fl={r:"",sale:false},art=null,isAdm=false,dirty=false,editing=null,img="",cedit=null,cimg="";
 const TL={sale:"SALE",new:"NEW!",custom:"CUSTOMISABLE"};
-function go(r){route=r;try{location.hash=r}catch(e){}render(true)}
+function go(r){route=r;try{location.hash=r}catch(e){}render(true);if(r.includes("#categories")){setTimeout(()=>{const cg=document.querySelector(".cg");if(cg)cg.scrollIntoView({behavior:"smooth"})},100)}}
 window.addEventListener("hashchange",()=>{const h=location.hash.slice(1)||"/";if(h!=route){route=h;render(true)}});
 function logo(){$("logo").innerHTML=D.logo?`<img src="${D.logo}" alt="ZEEMBA">`:'<span class="wm">ZEEMBA</span>'}
 function srch(){const q=$("q").value;if(q&&!/^\/(c|all)/.test(route)){route="/all";try{location.hash=route}catch(e){}}render(false)}
 const PHI='<svg viewBox="0 0 24 24" width="34%" fill="none" stroke="#b4b9c1" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.7"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg>';
 function ph(x){return x.img?`<img src="${x.img}" alt="">`:PHI}
 function card(x){return `<a class="pc" onclick="go('/p/${x.id}')"><div class="pi" style="background:var(--soft)"><div class="tg">${(x.t||[]).map(k=>`<span class="t ${k}">${TL[k]}</span>`).join("")}</div><div class="im">${ph(x)}</div>${x.r?`<span class="rt">${x.r} <span style="color:#fbbf24">★</span> ( ${x.rc||0} reviews)</span>`:""}</div><h3>${esc(x.n)}</h3><div class="br">ZEEMBA</div><div class="pr"><b>₹${x.p}</b>${x.m>x.p?`<s>₹${x.m}</s>`:""}</div></a>`}
+function about(){$("view").innerHTML=`<div style="max-width:720px;margin:30px auto;padding:0 10px;text-align:center;"><h1 class="ttl" style="margin-bottom:10px;">About ZEEMBA</h1><p style="font-family:'Outfit';font-size:18px;color:#6B4636;font-weight:500;margin-bottom:28px;">Handmade with love, crafted for your special moments ❤️</p><div style="background:#F7F0E3;border:1px solid #E6D8C5;border-radius:18px;padding:28px 24px;text-align:left;line-height:1.7;color:#4A2E22;"><h3 style="font-family:'Outfit';font-size:20px;margin-top:0;color:#6B4636;">Our Story</h3><p>Welcome to <b>ZEEMBA</b>, your destination for unique, handcrafted gifts and personalised keepsakes. Every miniature frame, gift hamper, and resin art piece is thoughtfully handmade to preserve your cherished memories.</p><p>Whether you are looking for a romantic anniversary gift, a personalized name frame, or a custom birthday surprise hamper, we bring heart and attention to detail into every creation.</p><h3 style="font-family:'Outfit';font-size:20px;margin-top:24px;color:#6B4636;">Why Choose ZEEMBA?</h3><ul style="padding-left:20px;margin-bottom:24px;"><li><b>100% Handcrafted:</b> Made with passion and attention to detail.</li><li><b>Customisable Designs:</b> Tailored to your exact photos, names, and preferences.</li><li><b>Direct WhatsApp Ordering:</b> Quick, friendly, and simple order process directly with the maker.</li></ul><h3 style="font-family:'Outfit';font-size:20px;margin-top:24px;color:#6B4636;">Get in Touch</h3><p>Have questions or custom requests? We would love to chat!</p><p style="margin-bottom:0;"><b>WhatsApp:</b> +91 78961 60761</p></div><div style="margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;"><button class="bn" style="max-width:200px;background:#6B4636;color:#fff;" onclick="go('/all')">Explore Shop</button><a class="bn g" style="max-width:220px;" href="https://wa.me/${WA}" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>`}
+function updateNavActive(){
+  ["nl-home","nl-shop","nl-cats","nl-about"].forEach(i=>{const e=$(i);if(e)e.classList.remove("active")});
+  const r=route.split("/")[1]||"";
+  if(r=="") { if(route.includes("#categories")) {$("nl-cats")&&$("nl-cats").classList.add("active");} else {$("nl-home")&&$("nl-home").classList.add("active");} }
+  else if(r=="all") {$("nl-shop")&&$("nl-shop").classList.add("active");}
+  else if(r=="c") {$("nl-cats")&&$("nl-cats").classList.add("active");}
+  else if(r=="about") {$("nl-about")&&$("nl-about").classList.add("active");}
+}
 function render(top){const r=route.split("/"),v=$("view");closeAll();
-if(r[1]=="c")list(decodeURIComponent(r[2]||""));else if(r[1]=="all")list("");else if(r[1]=="p")detail(+r[2]);else home();
-if(top)window.scrollTo(0,0)}
+if(r[1]=="c")list(decodeURIComponent(r[2]||""));else if(r[1]=="all")list("");else if(r[1]=="p")detail(+r[2]);else if(r[1]=="about")about();else home();
+if(top)window.scrollTo(0,0);updateNavActive()}
 function home(){const q=$("q").value;if(q){list("");return}
 let h=`<h1 class="ttl">All Categories</h1><p class="sub">${esc(D.sub)}</p><div class="cg">`+D.cats.map(c=>`<div class="cc" onclick="go('/c/${encodeURIComponent(c.n)}')"><div class="ci">${c.img?`<img src="${c.img}" alt="">`:PHI}</div><span>${esc(c.n)}</span></div>`).join("")+(D.cats.length%2?'<div class="cc"></div>':"")+`</div>`;
 h+=`<button class="lk" onclick="go('/all')">View all products →</button>`;$("view").innerHTML=h}
@@ -108,11 +135,35 @@ $("view").innerHTML=`<h1 class="ttl">${esc(c||"All Products")}</h1><p class="sub
 function flt(){$("modal").innerHTML=`<h2 class="hd" style="margin:0 0 8px">Filter</h2><b>Price</b>${[["","All prices"],["1","Under ₹300"],["2","₹300 – ₹600"],["3","Above ₹600"]].map(([v,t])=>`<label class="chk" style="display:flex"><input type="radio" name="pr" value="${v}" ${fl.r==v?"checked":""}> ${t}</label>`).join("")}<label class="chk" style="display:flex;margin-top:14px"><input type="checkbox" id="fsale" ${fl.sale?"checked":""}> Sale items only</label><button class="bn" onclick="fl.r=document.querySelector('input[name=pr]:checked').value;fl.sale=$('fsale').checked;render()">Apply</button><button class="bn o" onclick="fl={r:'',sale:false};render()">Clear</button>`;$("ov").classList.add("show");$("modal").classList.add("show")}
 function detail(i){const x=D.products.find(y=>y.id==i);if(!x){home();return}
 $("view").innerHTML=`<button class="lk" style="margin:20px 0 0" onclick="history.length>1?history.back():go('/')">← Back</button><div class="dt"><div class="pi" style="background:var(--soft)"><div class="tg">${(x.t||[]).map(k=>`<span class="t ${k}">${TL[k]}</span>`).join("")}</div><div class="im">${ph(x)}</div></div><div><h1 class="hd">${esc(x.n)}</h1><div class="br">ZEEMBA · ${esc(x.c)}</div>${x.r?`<p style="margin:8px 0 0">${x.r} <span style="color:#f59e0b">★</span> (${x.rc||0} reviews)</p>`:""}<div class="pr" style="margin:14px 0"><b>₹${x.p}</b>${x.m>x.p?`<s>₹${x.m}</s>`:""}</div><p style="color:var(--mute);line-height:1.6;white-space:pre-line">${esc(x.d)}</p><button class="bn" onclick="add(${x.id})">Add to cart</button><a class="bn g" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('Hi ZEEMBA, I want to order: '+x.n+' (₹'+x.p+')')}">Buy now on WhatsApp</a></div></div>`}
-function openM(){closeAll();$("menuL").innerHTML=`<div class="hd" style="font-size:14px;color:var(--mute);margin-bottom:8px">MENU</div><a onclick="go('/')">Home</a><a onclick="go('/all')">All Products</a>`+D.cats.map(c=>`<a onclick="go('/c/${encodeURIComponent(c.n)}')">${esc(c.n)}</a>`).join("")+`<a href="https://wa.me/${WA}" target="_blank" rel="noopener" style="display:block;color:inherit;text-decoration:none">Contact on WhatsApp</a>`;$("ov").classList.add("show");$("menu").classList.add("show")}
+function openM(){
+  closeAll();
+  const curr=route;
+  let h=`<div class="m-header"><span class="m-title">ZEEMBA</span><button class="m-close" onclick="closeAll()" aria-label="Close menu">✕</button></div>`;
+  h+=`<div id="menuL">`;
+  h+=`<a class="m-link ${curr=='/'||curr==''?'active':''}" onclick="go('/')">Home</a>`;
+  h+=`<a class="m-link ${curr=='/all'?'active':''}" onclick="go('/all')">Shop / Products</a>`;
+  h+=`<div class="m-cat-title">Categories</div>`;
+  h+=D.cats.map(c=>{
+    const cRoute='/c/'+encodeURIComponent(c.n);
+    const isAct=curr==cRoute||curr=='/#categories';
+    return `<a class="m-link m-cat-link ${isAct?'active':''}" onclick="go('${cRoute}')">${esc(c.n)}</a>`;
+  }).join("");
+  h+=`<a class="m-link ${curr=='/about'?'active':''}" onclick="go('/about')">About Us</a>`;
+  h+=`<a class="m-link" href="https://wa.me/${WA}" target="_blank" rel="noopener">Contact on WhatsApp 💬</a>`;
+  h+=`</div>`;
+  $("menu").innerHTML=h;
+  $("ov").classList.add("show");
+  $("menu").classList.add("show");
+  document.body.style.overflow="hidden";
+}
 function add(i){cart[i]=(cart[i]||0)+1;draw();openCart()}
 function chg(i,d){cart[i]+=d;if(cart[i]<1)delete cart[i];draw()}
-function openCart(){closeAll();$("ov").classList.add("show");$("drawer").classList.add("show")}
-function closeAll(){["ov","modal","drawer","menu","adm"].forEach(i=>{const e=$(i);if(e)e.classList.remove("show")})}
+function openCart(){closeAll();$("ov").classList.add("show");$("drawer").classList.add("show");document.body.style.overflow="hidden"}
+function flt(){$("modal").innerHTML=`<h2 class="hd" style="margin:0 0 8px">Filter</h2><b>Price</b>${[["","All prices"],["1","Under ₹300"],["2","₹300 – ₹600"],["3","Above ₹600"]].map(([v,t])=>`<label class="chk" style="display:flex"><input type="radio" name="pr" value="${v}" ${fl.r==v?"checked":""}> ${t}</label>`).join("")}<label class="chk" style="display:flex;margin-top:14px"><input type="checkbox" id="fsale" ${fl.sale?"checked":""}> Sale items only</label><button class="bn" onclick="fl.r=document.querySelector('input[name=pr]:checked').value;fl.sale=$('fsale').checked;render()">Apply</button><button class="bn o" onclick="fl={r:'',sale:false};render()">Clear</button>`;$("ov").classList.add("show");$("modal").classList.add("show");document.body.style.overflow="hidden"}
+function closeAll(){
+  ["ov","modal","drawer","menu","adm"].forEach(i=>{const e=$(i);if(e)e.classList.remove("show")});
+  document.body.style.overflow="";
+}
 function draw(){let t=0,q=0,m="Hi ZEEMBA, I want to order:\n";
 const h=Object.keys(cart).map(i=>{const x=D.products.find(y=>y.id==i);if(!x){delete cart[i];return""}const k=cart[i];t+=x.p*k;q+=k;m+=`- ${x.n} x${k} = ₹${x.p*k}\n`;return `<div class="row"><span>${esc(x.n)}<br><small style="color:var(--mute)">₹${x.p}</small></span><span class="qty"><button onclick="chg(${i},-1)">−</button> ${k} <button onclick="chg(${i},1)">+</button></span></div>`}).join("");
 $("items").innerHTML=h||'<p style="color:var(--mute)">Your cart is empty.</p>';$("n").textContent=q;$("n").style.display=q?"block":"none";$("tot").textContent="₹"+t;
